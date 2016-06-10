@@ -1,0 +1,18 @@
+{
+	"name": "invalidgt1",
+	"entries":
+	{
+		"all": 
+		{
+			"name": "*",
+			"gen": "all",
+			"level": 0
+		},
+		"all_dup": 
+		{
+			"name": "*",
+			"gen": "all",
+			"level": 0
+		}
+	}
+}

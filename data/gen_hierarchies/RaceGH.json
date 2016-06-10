@@ -1,0 +1,42 @@
+{
+	"name": "race",
+	"entries":
+	{
+		"all": 
+		{
+			"name": "*",
+			"gen": "all",
+			"level": 0
+		},
+		"White": 
+		{
+			"name": "White", 
+			"gen": "all",
+			"level": 1
+		},
+		"Asian-Pac-Islander": 
+		{
+			"name": "Asian-Pac-Islander", 
+			"gen": "all",
+			"level": 1
+		},
+		"Amer-Indian-Eskimo": 
+		{
+			"name": "Amer-Indian-Eskimo", 
+			"gen": "all",
+			"level": 1
+		},
+		"Other": 
+		{
+			"name": "Other", 
+			"gen": "all",
+			"level": 1
+		},
+		"Black": 
+		{
+			"name": "Black", 
+			"gen": "all",
+			"level": 1
+		}
+	}
+}

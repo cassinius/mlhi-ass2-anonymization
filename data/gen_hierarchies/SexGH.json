@@ -1,0 +1,24 @@
+{
+	"name": "sex",
+	"entries":
+	{
+		"all": 
+		{
+			"name": "*",
+			"gen": "all",
+			"level": 0
+		},
+		"Female": 
+		{
+			"name": "Female", 
+			"gen": "all",
+			"level": 1
+		},
+		"Male": 
+		{
+			"name": "Male", 
+			"gen": "all",
+			"level": 1
+		}
+	}
+}

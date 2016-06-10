@@ -1,0 +1,54 @@
+{
+	"name": "marital-status",
+	"entries":
+	{
+		"all": 
+		{
+			"name": "*",
+			"gen": "all",
+			"level": 0
+		},
+		"Married-civ-spouse": 
+		{
+			"name": "Married-civ-spouse", 
+			"gen": "all",
+			"level": 1
+		},
+		"Divorced": 
+		{
+			"name": "Divorced", 
+			"gen": "all",
+			"level": 1
+		},
+		"Never-married": 
+		{
+			"name": "Never-married", 
+			"gen": "all",
+			"level": 1
+		},
+		"Separated": 
+		{
+			"name": "Separated", 
+			"gen": "all",
+			"level": 1
+		},
+		"Widowed": 
+		{
+			"name": "Widowed", 
+			"gen": "all",
+			"level": 1
+		},
+		"Married-spouse-absent": 
+		{
+			"name": "Married-spouse-absent", 
+			"gen": "all",
+			"level": 1
+		},
+		"Married-AF-spouse": 
+		{
+			"name": "Married-AF-spouse", 
+			"gen": "all",
+			"level": 1
+		}
+	}
+}
