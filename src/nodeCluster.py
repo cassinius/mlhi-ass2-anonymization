@@ -2,7 +2,7 @@ class NodeCluster:
 
     def __init__(self):
         self._nodes = []
-        self._neighborhood = set()
+        self._neighborhood = []
         self._genCatFeatures = {
             'workclass': '',
             'native-country': '',
@@ -15,9 +15,25 @@ class NodeCluster:
         }
 
 
+    def getNodes(self):
+        return self._nodes
+
+
+    def getNeighborhood(self):
+        return self._neighborhood
+
+
     def addNode(self, node, adj_list):
         self._nodes.append(node)
-        seen = self._neighborhood
-        for edge in adj_list[node]:
-            if edge not in seen:
-                self._neighborhood.append(edge)
+        new_neighbor = self._neighborhood.append([adj_list[node]])
+
+
+    def computeGIL(self, node, adults):
+        # TODO implement GIL function according to assignment
+        return 1
+
+
+    def computeSIL(self, node, adj_list):
+        # TODO implement SIL function according to assignment
+        return 1
+        
