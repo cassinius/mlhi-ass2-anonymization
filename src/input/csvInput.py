@@ -4,8 +4,8 @@ adult_file_name = '../../data/input_sanitized.csv'
 adj_list_file_name = '../../data/adult_graph_adj_list.csv'
 
 
-def readAdults():
-    adult_file = open(adult_file_name, 'r')
+def readAdults(file_name):
+    adult_file = open(file_name, 'r')
     adults_csv = csv.reader(adult_file, delimiter=',')
 
     # ignore the headers
@@ -27,8 +27,8 @@ def readAdults():
     return adults
 
 
-def readAdjList():
-    adj_list_file = open(adj_list_file_name, 'r')
+def readAdjList(file_name):
+    adj_list_file = open(file_name, 'r')
     adj_list_csv = csv.reader(adj_list_file, delimiter=',')
 
     # create the dict we need
@@ -42,5 +42,5 @@ def readAdjList():
 
 
 if __name__ == "__main__":
-    print readAdults()
-    print readAdjList()
+    print readAdults(adult_file_name)
+    print readAdjList(adj_list_file_name)
