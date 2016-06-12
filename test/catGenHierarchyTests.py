@@ -2,7 +2,7 @@ import unittest
 import src.catGenHierarchy as CGH
 
 
-#  test_ prefix for methods is needed in python unit tests
+#  test_ prefix for methods is needed in python unittest
 class CatGenHierarchyMethods(unittest.TestCase):
 
     def test_catGenSexLevels(self):
@@ -33,6 +33,9 @@ class CatGenHierarchyMethods(unittest.TestCase):
     def test_catGenCountryGetGenOfAsia(self):
         cgh = CGH.CatGenHierarchy('native-country', '../data/gen_hierarchies/NativeCountryGH.json')
         self.assertEqual(cgh.getGeneralizationOf('Asia'), 'all')
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
