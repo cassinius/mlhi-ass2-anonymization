@@ -31,10 +31,11 @@ class NodeCluster:
         return self._neighborhoods
 
 
-    # TODO This should also update the feature levels and ranages
     def addNode(self, node):
         self._nodes.append(node)
         self._neighborhoods[node] = self._adjList[node]
+
+        # Updating feature levels and ranges
 
         for genCatFeatureKey in self._genCatFeatures:
             self._genCatFeatures[genCatFeatureKey] = self.computeNewGeneralization(genCatFeatureKey, node)[1]
@@ -46,7 +47,6 @@ class NodeCluster:
         # print self._genRangeFeatures
 
 
-    # TODO apply weight vector here (one centralized place...)
     def computeGIL(self, node):
         costs = 0.0
         weight_vector = GLOB.GEN_WEIGHT_VECTORS[GLOB.VECTOR]
@@ -144,6 +144,23 @@ class NodeCluster:
 
 
     def toString(self):
-        out_string = "blaa"
+        out_string = ""
 
+        for count in range(0, len(self._nodes)):
+
+            # Non-automatic, but therefore in the right order...
+
+            age = self._genRangeFeatures['age']
+            if age[0] == age[1]:
+                out_string += str(age[0]) + ", "
+            else:
+                out_string += "[" + str(age[0]) + " - " + str(age[1]) + "], "
+
+            out_string += self._genCatFeatures['workclass'] + ", "
+            out_string += self._genCatFeatures['native-country'] + ", "
+            out_string += self._genCatFeatures['sex'] + ", "
+            out_string += self._genCatFeatures['race'] + ", "
+            out_string += self._genCatFeatures['marital-status'] + "\n"
+
+        out_string = out_string.replace("all", "*")
         return out_string

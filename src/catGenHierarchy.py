@@ -1,4 +1,4 @@
-import input.jsonInput as json
+import io.jsonInput as json
 
 
 class CatGenHierarchy:
@@ -50,6 +50,10 @@ class CatGenHierarchy:
 
     def getGeneralizationOf(self, key):
         return self._entries[key]['gen']
+
+
+    def getNameEntry(self, key):
+        return self._entries[key]['name']
 
 
 if __name__ == '__main__':

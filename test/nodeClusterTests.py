@@ -1,5 +1,5 @@
 import unittest
-import src.input.csvInput as csv
+import src.io.csvInput as csv
 import src.nodeCluster as ncl
 
 adults_file_csv = '../data/input_sanitized.csv'

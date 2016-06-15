@@ -1,4 +1,5 @@
-import input.csvInput as csv
+import io.csvInput as csv
+import io.output as out
 import catGenHierarchy as CGH
 import rangeGenHierarchy as RGH
 import nodeCluster as CL
@@ -47,11 +48,10 @@ def prepareGenHierarchiesObject(dataset):
     return gen_hierarchies
 
 
-
 def main():
     print "Starting SaNGreeA algorithm..."
 
-    ## Prepare input data structures
+    ## Prepare io data structures
     adults = csv.readAdults(adults_csv)
     adj_list = csv.readAdjList(adj_list_csv)
     gen_hierarchies = prepareGenHierarchiesObject(adults)
@@ -93,11 +93,8 @@ def main():
         clusters.append(cluster)
 
 
-    i = 0
-    for cluster in clusters:
-        i += 1
-        print "Cluster " + str(i) + ": " + cluster.toString()
-        # print clusters[cluster].toString()
+    out.outputCSV(clusters, "anonymized_" + GLOB.VECTOR + '_weights.csv')
+
 
 
 if __name__ == '__main__':
