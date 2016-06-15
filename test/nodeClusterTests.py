@@ -12,21 +12,19 @@ adj_list = csv.readAdjList(adj_list_csv)
 class NodeClusterMethods(unittest.TestCase):
 
     def test_nodeClusterAddNode(self):
-        cluster = ncl.NodeCluster()
-        cluster.addNode(0, adj_list)
+        cluster = ncl.NodeCluster(0, adults, adj_list)
         self.assertEqual(cluster.getNodes(), [0])
 
 
-    @unittest.skip("implement pertinent functionality first...")
+    #@unittest.skip("implement pertinent functionality first...")
     def test_nodeClusterComputeSIL(self):
-        cluster = ncl.NodeCluster()
-        cluster.addNode(0, adj_list)
-        cluster.addNode(1, adj_list)
+        cluster = ncl.NodeCluster(0, adults, adj_list)
+        cluster.addNode(1)
         self.assertEqual(cluster.getNodes(), [0, 1])
-        self.assertEqual(round(cluster.computeSIL(2, adj_list), 4), 0.9983)
+        self.assertEqual(round(cluster.computeSIL(2), 4), 0.9983)
 
 
-    @unittest.skip("implement pertinent functionality first...")
+    #@unittest.skip("implement pertinent functionality first...")
     def test_nodeClusterComputeSILIncludingIJNilCommon(self):
         adj_list_test = {
             0: [1, 2, 3, 4, 5],
@@ -34,12 +32,11 @@ class NodeClusterMethods(unittest.TestCase):
             2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8:[], 9:[]
         }
         self.assertEqual(len(adj_list_test), 10)
-        cluster = ncl.NodeCluster()
-        cluster.addNode(0, adj_list_test)
-        self.assertEqual(round((cluster.computeSIL(1, adj_list_test)), 2), 1)
+        cluster = ncl.NodeCluster(0, adults, adj_list_test)
+        self.assertEqual(round((cluster.computeSIL(1)), 2), 1)
 
 
-    @unittest.skip("implement pertinent functionality first...")
+    #@unittest.skip("implement pertinent functionality first...")
     def test_nodeClusterComputeSILIncludingIJOneCommon(self):
         adj_list_test = {
             0: [1, 2, 3, 4, 5],
@@ -47,9 +44,8 @@ class NodeClusterMethods(unittest.TestCase):
             2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: []
         }
         self.assertEqual(len(adj_list_test), 10)
-        cluster = ncl.NodeCluster()
-        cluster.addNode(0, adj_list_test)
-        self.assertEqual(round((cluster.computeSIL(1, adj_list_test)), 2), 0.88)
+        cluster = ncl.NodeCluster(0, adults, adj_list_test)
+        self.assertEqual(round((cluster.computeSIL(1)), 2), 0.88)
 
 if __name__ == '__main__':
     unittest.main()

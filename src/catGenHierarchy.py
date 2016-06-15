@@ -40,12 +40,12 @@ class CatGenHierarchy:
         return self._entries
 
 
-    def getNrLevels(self):
+    def nrLevels(self):
         return self._levels
 
 
     def getLevelEntry(self, key):
-        return self._entries[key]
+        return self._entries[key]['level']
 
 
     def getGeneralizationOf(self, key):

@@ -7,12 +7,12 @@ class CatGenHierarchyMethods(unittest.TestCase):
 
     def test_catGenSexLevels(self):
         cgh = CGH.CatGenHierarchy('sex', '../data/gen_hierarchies/SexGH.json')
-        self.assertEqual(cgh.getNrLevels(), 1)
+        self.assertEqual(cgh.nrLevels(), 1)
 
 
     def test_catGenCountryLevels(self):
         cgh = CGH.CatGenHierarchy('native-country', '../data/gen_hierarchies/NativeCountryGH.json')
-        self.assertEqual(cgh.getNrLevels(), 3)
+        self.assertEqual(cgh.nrLevels(), 3)
 
 
     def test_catGenSexGetGenOfMale(self):
@@ -33,6 +33,21 @@ class CatGenHierarchyMethods(unittest.TestCase):
     def test_catGenCountryGetGenOfAsia(self):
         cgh = CGH.CatGenHierarchy('native-country', '../data/gen_hierarchies/NativeCountryGH.json')
         self.assertEqual(cgh.getGeneralizationOf('Asia'), 'all')
+
+
+    def test_catGenRaceGetNrLevels(self):
+        cgh = CGH.CatGenHierarchy('race', '../data/gen_hierarchies/RaceGH.json')
+        self.assertEqual(cgh.nrLevels(), 1)
+
+
+    def test_catGenRaceGetLevelEntryOfWhite(self):
+        cgh = CGH.CatGenHierarchy('race', '../data/gen_hierarchies/RaceGH.json')
+        self.assertEqual(cgh.getLevelEntry('White'), 1)
+
+
+    def test_catGenRaceGetGenOfWhite(self):
+        cgh = CGH.CatGenHierarchy('race', '../data/gen_hierarchies/RaceGH.json')
+        self.assertEqual(cgh.getGeneralizationOf('White'), 'all')
 
 
 
