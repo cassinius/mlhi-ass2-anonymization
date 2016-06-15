@@ -1,0 +1,301 @@
+age, workclass, native-country, sex, race, marital-status 
+[39 - 40], *, United-States, Male, White, *
+[39 - 40], *, United-States, Male, White, *
+[39 - 40], *, United-States, Male, White, *
+[39 - 40], *, United-States, Male, White, *
+[39 - 40], *, United-States, Male, White, *
+[39 - 40], *, United-States, Male, White, *
+[39 - 40], *, United-States, Male, White, *
+[39 - 40], *, United-States, Male, White, *
+[39 - 40], *, United-States, Male, White, *
+[39 - 40], *, United-States, Male, White, *
+[50 - 53], Self, United-States, Male, White, Married-civ-spouse
+[50 - 53], Self, United-States, Male, White, Married-civ-spouse
+[50 - 53], Self, United-States, Male, White, Married-civ-spouse
+[50 - 53], Self, United-States, Male, White, Married-civ-spouse
+[50 - 53], Self, United-States, Male, White, Married-civ-spouse
+[50 - 53], Self, United-States, Male, White, Married-civ-spouse
+[50 - 53], Self, United-States, Male, White, Married-civ-spouse
+[50 - 53], Self, United-States, Male, White, Married-civ-spouse
+[50 - 53], Self, United-States, Male, White, Married-civ-spouse
+[50 - 53], Self, United-States, Male, White, Married-civ-spouse
+[53 - 57], *, North-America, Male, *, Married-civ-spouse
+[53 - 57], *, North-America, Male, *, Married-civ-spouse
+[53 - 57], *, North-America, Male, *, Married-civ-spouse
+[53 - 57], *, North-America, Male, *, Married-civ-spouse
+[53 - 57], *, North-America, Male, *, Married-civ-spouse
+[53 - 57], *, North-America, Male, *, Married-civ-spouse
+[53 - 57], *, North-America, Male, *, Married-civ-spouse
+[53 - 57], *, North-America, Male, *, Married-civ-spouse
+[53 - 57], *, North-America, Male, *, Married-civ-spouse
+[53 - 57], *, North-America, Male, *, Married-civ-spouse
+28, Private, *, Female, *, *
+28, Private, *, Female, *, *
+28, Private, *, Female, *, *
+28, Private, *, Female, *, *
+28, Private, *, Female, *, *
+28, Private, *, Female, *, *
+28, Private, *, Female, *, *
+28, Private, *, Female, *, *
+28, Private, *, Female, *, *
+28, Private, *, Female, *, *
+37, *, United-States, *, White, *
+37, *, United-States, *, White, *
+37, *, United-States, *, White, *
+37, *, United-States, *, White, *
+37, *, United-States, *, White, *
+37, *, United-States, *, White, *
+37, *, United-States, *, White, *
+37, *, United-States, *, White, *
+37, *, United-States, *, White, *
+37, *, United-States, *, White, *
+[49 - 50], Private, *, *, *, *
+[49 - 50], Private, *, *, *, *
+[49 - 50], Private, *, *, *, *
+[49 - 50], Private, *, *, *, *
+[49 - 50], Private, *, *, *, *
+[49 - 50], Private, *, *, *, *
+[49 - 50], Private, *, *, *, *
+[49 - 50], Private, *, *, *, *
+[49 - 50], Private, *, *, *, *
+[49 - 50], Private, *, *, *, *
+[31 - 35], Private, United-States, *, *, Never-married
+[31 - 35], Private, United-States, *, *, Never-married
+[31 - 35], Private, United-States, *, *, Never-married
+[31 - 35], Private, United-States, *, *, Never-married
+[31 - 35], Private, United-States, *, *, Never-married
+[31 - 35], Private, United-States, *, *, Never-married
+[31 - 35], Private, United-States, *, *, Never-married
+[31 - 35], Private, United-States, *, *, Never-married
+[31 - 35], Private, United-States, *, *, Never-married
+[31 - 35], Private, United-States, *, *, Never-married
+[42 - 43], *, United-States, Male, White, Married-civ-spouse
+[42 - 43], *, United-States, Male, White, Married-civ-spouse
+[42 - 43], *, United-States, Male, White, Married-civ-spouse
+[42 - 43], *, United-States, Male, White, Married-civ-spouse
+[42 - 43], *, United-States, Male, White, Married-civ-spouse
+[42 - 43], *, United-States, Male, White, Married-civ-spouse
+[42 - 43], *, United-States, Male, White, Married-civ-spouse
+[42 - 43], *, United-States, Male, White, Married-civ-spouse
+[42 - 43], *, United-States, Male, White, Married-civ-spouse
+[42 - 43], *, United-States, Male, White, Married-civ-spouse
+[37 - 38], *, *, Male, *, Married-civ-spouse
+[37 - 38], *, *, Male, *, Married-civ-spouse
+[37 - 38], *, *, Male, *, Married-civ-spouse
+[37 - 38], *, *, Male, *, Married-civ-spouse
+[37 - 38], *, *, Male, *, Married-civ-spouse
+[37 - 38], *, *, Male, *, Married-civ-spouse
+[37 - 38], *, *, Male, *, Married-civ-spouse
+[37 - 38], *, *, Male, *, Married-civ-spouse
+[37 - 38], *, *, Male, *, Married-civ-spouse
+[37 - 38], *, *, Male, *, Married-civ-spouse
+[30 - 31], *, *, Male, *, Married-civ-spouse
+[30 - 31], *, *, Male, *, Married-civ-spouse
+[30 - 31], *, *, Male, *, Married-civ-spouse
+[30 - 31], *, *, Male, *, Married-civ-spouse
+[30 - 31], *, *, Male, *, Married-civ-spouse
+[30 - 31], *, *, Male, *, Married-civ-spouse
+[30 - 31], *, *, Male, *, Married-civ-spouse
+[30 - 31], *, *, Male, *, Married-civ-spouse
+[30 - 31], *, *, Male, *, Married-civ-spouse
+[30 - 31], *, *, Male, *, Married-civ-spouse
+[23 - 26], Private, United-States, *, White, Never-married
+[23 - 26], Private, United-States, *, White, Never-married
+[23 - 26], Private, United-States, *, White, Never-married
+[23 - 26], Private, United-States, *, White, Never-married
+[23 - 26], Private, United-States, *, White, Never-married
+[23 - 26], Private, United-States, *, White, Never-married
+[23 - 26], Private, United-States, *, White, Never-married
+[23 - 26], Private, United-States, *, White, Never-married
+[23 - 26], Private, United-States, *, White, Never-married
+[23 - 26], Private, United-States, *, White, Never-married
+[34 - 35], *, *, Male, *, Married-civ-spouse
+[34 - 35], *, *, Male, *, Married-civ-spouse
+[34 - 35], *, *, Male, *, Married-civ-spouse
+[34 - 35], *, *, Male, *, Married-civ-spouse
+[34 - 35], *, *, Male, *, Married-civ-spouse
+[34 - 35], *, *, Male, *, Married-civ-spouse
+[34 - 35], *, *, Male, *, Married-civ-spouse
+[34 - 35], *, *, Male, *, Married-civ-spouse
+[34 - 35], *, *, Male, *, Married-civ-spouse
+[34 - 35], *, *, Male, *, Married-civ-spouse
+[25 - 27], *, United-States, Male, White, Never-married
+[25 - 27], *, United-States, Male, White, Never-married
+[25 - 27], *, United-States, Male, White, Never-married
+[25 - 27], *, United-States, Male, White, Never-married
+[25 - 27], *, United-States, Male, White, Never-married
+[25 - 27], *, United-States, Male, White, Never-married
+[25 - 27], *, United-States, Male, White, Never-married
+[25 - 27], *, United-States, Male, White, Never-married
+[25 - 27], *, United-States, Male, White, Never-married
+[25 - 27], *, United-States, Male, White, Never-married
+[43 - 47], Self, United-States, *, *, *
+[43 - 47], Self, United-States, *, *, *
+[43 - 47], Self, United-States, *, *, *
+[43 - 47], Self, United-States, *, *, *
+[43 - 47], Self, United-States, *, *, *
+[43 - 47], Self, United-States, *, *, *
+[43 - 47], Self, United-States, *, *, *
+[43 - 47], Self, United-States, *, *, *
+[43 - 47], Self, United-States, *, *, *
+[43 - 47], Self, United-States, *, *, *
+[54 - 60], *, United-States, *, *, *
+[54 - 60], *, United-States, *, *, *
+[54 - 60], *, United-States, *, *, *
+[54 - 60], *, United-States, *, *, *
+[54 - 60], *, United-States, *, *, *
+[54 - 60], *, United-States, *, *, *
+[54 - 60], *, United-States, *, *, *
+[54 - 60], *, United-States, *, *, *
+[54 - 60], *, United-States, *, *, *
+[54 - 60], *, United-States, *, *, *
+[19 - 22], Private, United-States, Male, White, Never-married
+[19 - 22], Private, United-States, Male, White, Never-married
+[19 - 22], Private, United-States, Male, White, Never-married
+[19 - 22], Private, United-States, Male, White, Never-married
+[19 - 22], Private, United-States, Male, White, Never-married
+[19 - 22], Private, United-States, Male, White, Never-married
+[19 - 22], Private, United-States, Male, White, Never-married
+[19 - 22], Private, United-States, Male, White, Never-married
+[19 - 22], Private, United-States, Male, White, Never-married
+[19 - 22], Private, United-States, Male, White, Never-married
+[23 - 24], *, America, *, White, *
+[23 - 24], *, America, *, White, *
+[23 - 24], *, America, *, White, *
+[23 - 24], *, America, *, White, *
+[23 - 24], *, America, *, White, *
+[23 - 24], *, America, *, White, *
+[23 - 24], *, America, *, White, *
+[23 - 24], *, America, *, White, *
+[23 - 24], *, America, *, White, *
+[23 - 24], *, America, *, White, *
+[20 - 21], Private, United-States, *, *, Never-married
+[20 - 21], Private, United-States, *, *, Never-married
+[20 - 21], Private, United-States, *, *, Never-married
+[20 - 21], Private, United-States, *, *, Never-married
+[20 - 21], Private, United-States, *, *, Never-married
+[20 - 21], Private, United-States, *, *, Never-married
+[20 - 21], Private, United-States, *, *, Never-married
+[20 - 21], Private, United-States, *, *, Never-married
+[20 - 21], Private, United-States, *, *, Never-married
+[20 - 21], Private, United-States, *, *, Never-married
+[22 - 28], *, *, *, *, *
+[22 - 28], *, *, *, *, *
+[22 - 28], *, *, *, *, *
+[22 - 28], *, *, *, *, *
+[22 - 28], *, *, *, *, *
+[22 - 28], *, *, *, *, *
+[22 - 28], *, *, *, *, *
+[22 - 28], *, *, *, *, *
+[22 - 28], *, *, *, *, *
+[22 - 28], *, *, *, *, *
+[19 - 29], Private, America, *, White, *
+[19 - 29], Private, America, *, White, *
+[19 - 29], Private, America, *, White, *
+[19 - 29], Private, America, *, White, *
+[19 - 29], Private, America, *, White, *
+[19 - 29], Private, America, *, White, *
+[19 - 29], Private, America, *, White, *
+[19 - 29], Private, America, *, White, *
+[19 - 29], Private, America, *, White, *
+[19 - 29], Private, America, *, White, *
+[48 - 50], *, United-States, *, *, *
+[48 - 50], *, United-States, *, *, *
+[48 - 50], *, United-States, *, *, *
+[48 - 50], *, United-States, *, *, *
+[48 - 50], *, United-States, *, *, *
+[48 - 50], *, United-States, *, *, *
+[48 - 50], *, United-States, *, *, *
+[48 - 50], *, United-States, *, *, *
+[48 - 50], *, United-States, *, *, *
+[48 - 50], *, United-States, *, *, *
+47, *, America, *, White, *
+47, *, America, *, White, *
+47, *, America, *, White, *
+47, *, America, *, White, *
+47, *, America, *, White, *
+47, *, America, *, White, *
+47, *, America, *, White, *
+47, *, America, *, White, *
+47, *, America, *, White, *
+47, *, America, *, White, *
+[31 - 35], *, United-States, Female, *, *
+[31 - 35], *, United-States, Female, *, *
+[31 - 35], *, United-States, Female, *, *
+[31 - 35], *, United-States, Female, *, *
+[31 - 35], *, United-States, Female, *, *
+[31 - 35], *, United-States, Female, *, *
+[31 - 35], *, United-States, Female, *, *
+[31 - 35], *, United-States, Female, *, *
+[31 - 35], *, United-States, Female, *, *
+[31 - 35], *, United-States, Female, *, *
+[79 - 90], *, America, *, *, *
+[79 - 90], *, America, *, *, *
+[79 - 90], *, America, *, *, *
+[79 - 90], *, America, *, *, *
+[79 - 90], *, America, *, *, *
+[79 - 90], *, America, *, *, *
+[79 - 90], *, America, *, *, *
+[79 - 90], *, America, *, *, *
+[79 - 90], *, America, *, *, *
+[79 - 90], *, America, *, *, *
+[52 - 62], *, America, *, *, *
+[52 - 62], *, America, *, *, *
+[52 - 62], *, America, *, *, *
+[52 - 62], *, America, *, *, *
+[52 - 62], *, America, *, *, *
+[52 - 62], *, America, *, *, *
+[52 - 62], *, America, *, *, *
+[52 - 62], *, America, *, *, *
+[52 - 62], *, America, *, *, *
+[52 - 62], *, America, *, *, *
+[43 - 44], *, United-States, *, *, *
+[43 - 44], *, United-States, *, *, *
+[43 - 44], *, United-States, *, *, *
+[43 - 44], *, United-States, *, *, *
+[43 - 44], *, United-States, *, *, *
+[43 - 44], *, United-States, *, *, *
+[43 - 44], *, United-States, *, *, *
+[43 - 44], *, United-States, *, *, *
+[43 - 44], *, United-States, *, *, *
+[43 - 44], *, United-States, *, *, *
+[29 - 32], *, *, *, *, *
+[29 - 32], *, *, *, *, *
+[29 - 32], *, *, *, *, *
+[29 - 32], *, *, *, *, *
+[29 - 32], *, *, *, *, *
+[29 - 32], *, *, *, *, *
+[29 - 32], *, *, *, *, *
+[29 - 32], *, *, *, *, *
+[29 - 32], *, *, *, *, *
+[29 - 32], *, *, *, *, *
+[64 - 65], *, United-States, Male, *, *
+[64 - 65], *, United-States, Male, *, *
+[64 - 65], *, United-States, Male, *, *
+[64 - 65], *, United-States, Male, *, *
+[64 - 65], *, United-States, Male, *, *
+[64 - 65], *, United-States, Male, *, *
+[64 - 65], *, United-States, Male, *, *
+[64 - 65], *, United-States, Male, *, *
+[64 - 65], *, United-States, Male, *, *
+[64 - 65], *, United-States, Male, *, *
+[33 - 37], Self, *, *, *, *
+[33 - 37], Self, *, *, *, *
+[33 - 37], Self, *, *, *, *
+[33 - 37], Self, *, *, *, *
+[33 - 37], Self, *, *, *, *
+[33 - 37], Self, *, *, *, *
+[33 - 37], Self, *, *, *, *
+[33 - 37], Self, *, *, *, *
+[33 - 37], Self, *, *, *, *
+[33 - 37], Self, *, *, *, *
+[40 - 42], Self, *, *, *, *
+[40 - 42], Self, *, *, *, *
+[40 - 42], Self, *, *, *, *
+[40 - 42], Self, *, *, *, *
+[40 - 42], Self, *, *, *, *
+[40 - 42], Self, *, *, *, *
+[40 - 42], Self, *, *, *, *
+[40 - 42], Self, *, *, *, *
+[40 - 42], Self, *, *, *, *
+[40 - 42], Self, *, *, *, *
