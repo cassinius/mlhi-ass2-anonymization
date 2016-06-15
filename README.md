@@ -1,8 +1,10 @@
-# Machine Learning for Health Informatics, Assignment 2:
+# Machine Learning for Health Informatics, Assignment 3:
 
 # Social network anonymization with SaNGreeA
 
 ---
+
+**Name change**: This is now officially assignment 3, as Marcus' last one was already assignment 2.
 
 > Please read the original SaNGreeA paper contained in the 'paper' folder and / or watch the following YouTube movie before starting the assignment.
 
