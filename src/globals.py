@@ -49,5 +49,5 @@ GEN_WEIGHT_VECTORS = {
     }
 }
 
-# Choose weight vector
+# Chosen weight vector
 VECTOR = 'equal'

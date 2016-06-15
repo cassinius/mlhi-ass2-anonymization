@@ -6,3 +6,4 @@
 
 # Output files
 output/*.csv
+src/io/output.pyc

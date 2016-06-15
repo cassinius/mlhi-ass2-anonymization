@@ -1,4 +1,5 @@
 import globals as GLOB
+import random
 
 class NodeCluster:
 
@@ -64,75 +65,37 @@ class NodeCluster:
 
 
     def computeCategoricalCost(self, gen_h, node):
-        # TODO implement categorical cost function
-        # return 0
-
         cat_hierarchy = self._genHierarchies['categorical'][gen_h]
         cluster_level = self.computeNewGeneralization(gen_h, node)[0]
         return float((cat_hierarchy.nrLevels() - cluster_level) / cat_hierarchy.nrLevels())
 
 
-    def computeNewGeneralization(self, gen_h, node):
-        # TODO find the lowest common generalization level between
-        # cluster and node and return level as well as the exact value
-        # return [0, "generalized!"]
-
-        cat_hierarchy = self._genHierarchies['categorical'][gen_h]
-        cluster_feat = self._genCatFeatures[gen_h]
-        cluster_level = cat_hierarchy.getLevelEntry(cluster_feat)
-        node_feat = self._dataset[node][gen_h]
-        # node_level = cat_hierarchy.getLevelEntry(node_feat)
-
-        # print "Gen key: " + gen_h
-        # print "Cluster feat: " + cluster_feat
-        # print "Cluster level: " + str(cluster_level)
-        # print "Node feat: " + node_feat
-        # print "Node level: " + str(node_level)
-
-        while cluster_feat != node_feat:
-            node_feat = cat_hierarchy.getGeneralizationOf(node_feat)
-            node_level = cat_hierarchy.getLevelEntry(node_feat)
-            if cluster_level > node_level:
-                cluster_feat = cat_hierarchy.getGeneralizationOf(cluster_feat)
-                cluster_level = cat_hierarchy.getLevelEntry(cluster_feat)
-
-        return [cluster_level, cluster_feat]
-
-
     def computeRangeCost(self, gen_h, node):
         # TODO implement range cost function
-        # return 0
 
-        range = self._genRangeFeatures[gen_h]
-        # print range
-        # print "New age info: " + str(self._dataset[node][gen_h])
-        new_range = self.expandRange(range, self._dataset[node][gen_h])
-        return self._genHierarchies['range'][gen_h].getCostOfRange(new_range[0], new_range[1])
+        # Fake...
+        return random.randint(0, 1)
+
+
+    def computeNewGeneralization(self, gen_h, node):
+        # TODO find the lowest common generalization level between cluster
+        # and node and return level as well as the exact (string) value
+
+        # Fake...
+        return [0, "generalized!"]
+
+
+    def computeSIL(self, node):
+        # TODO implement SIL function with binary neighborhood vectors
+
+        # Fake...
+        return random.randint(0, 1)
 
 
     def expandRange(self, range, nr):
         min = nr if nr < range[0] else range[0]
         max = nr if nr > range[1] else range[1]
         return [min, max]
-
-
-    def computeSIL(self, node):
-        # TODO implement SIL function according to assignment
-        # return 1
-
-        population_size = len(self._adjList) - 2
-        dists = []
-
-        for cl_node in self._neighborhoods:
-            dist = float(population_size)
-            neighbors = self._neighborhoods[cl_node]
-            for edge in neighbors:
-                if edge != node and edge in self._adjList[node]:
-                    dist -= 1
-            dists.append(dist / population_size)
-            # print dists
-
-        return float(sum(dists)) / float(len(dists))
 
 
     def computeNodeCost(self, node):

@@ -62,6 +62,7 @@ def main():
     best_candidate = None # the currently best candidate by costs
     added = {} # dict containing all nodes already added to clusters
 
+
     ## MAIN LOOP
     for node in adults:
         if node in added and added[node] == True:
@@ -92,6 +93,7 @@ def main():
         ## We have filled our cluster with k entries, push it to clusters
         clusters.append(cluster)
 
+    print "Successfully built " + str(len(clusters)) + " clusters."
 
     out.outputCSV(clusters, "anonymized_" + GLOB.VECTOR + '_weights.csv')
 
