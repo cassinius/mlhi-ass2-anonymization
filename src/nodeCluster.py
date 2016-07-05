@@ -72,15 +72,37 @@ class NodeCluster:
 
     def computeRangeCost(self, gen_h, node):
         # TODO implement range cost function
+        range_h = self._genHierarchies['range'][gen_h]
+        val = self._dataset[node][gen_h]
 
+        return float(val/(range_h._max-range_h._min))
         # Fake...
-        return random.randint(0, 1)
+        #return random.randint(0, 1)
 
 
     def computeNewGeneralization(self, gen_h, node):
         # TODO find the lowest common generalization level between cluster
         # and node and return level as well as the exact (string) value
+        cat_hierarchy = self._genHierarchies['categorical'][gen_h]
+        node_entry = self._dataset[node][gen_h]
+        cluster_entry = self._genCatFeatures[gen_h]
 
+        levelNr_Node = cat_hierarchy.getLevelNr(node_entry)
+        levelNr_Cluster = cat_hierarchy.getLevelNr(cluster_entry)
+
+        name_Node = cat_hierarchy.getNameEntry(node_entry)
+        name_Cluster = cat_hierarchy.getNameEntry(cluster_entry)
+
+
+        if levelNr_Cluster==levelNr_Node:
+            if name_Node==name_Cluster:
+                return [levelNr_Node, name_Node]
+            else:
+
+        else:
+
+
+        #print node_hierarchy
         # Fake...
         return [0, "generalized!"]
 
