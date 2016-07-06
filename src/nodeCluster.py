@@ -73,6 +73,16 @@ class NodeCluster:
     def computeRangeCost(self, gen_h, node):
         # TODO implement range cost function
 
+        node_value = self._dataset[node][gen_h]
+        f_from, f_to = self._genRangeFeatures[gen_h]
+        range_h = self._genHierarchies['range'][gen_h]
+        if node_value < (f_to+f_from)/2:
+            costs = range_h.getCostOfRange(node_value, f_to)
+        else:
+            costs = range_h.getCostOfRange(f_from, node_value)
+        #costs = range_h.getCostOfRange(range_h._min, node_value)
+        print node_value, f_from, f_to, costs
+        return costs
         # Fake...
         return random.randint(0, 1)
 
