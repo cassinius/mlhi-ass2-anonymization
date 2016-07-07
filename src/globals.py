@@ -4,11 +4,11 @@
 K_FACTOR = 9
 
 # Weight of the Generalization Information Loss
-ALPHA = 1
-
+#ALPHA = 1
+ALPHA = 0.6
 # Weight of the Structural Information Loss
-BETA = 0
-
+#BETA = 0
+BETA = 0.4
 # Weight vector for generalization categories
 GEN_WEIGHT_VECTORS = {
     'equal': {
