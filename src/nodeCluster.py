@@ -81,8 +81,9 @@ class NodeCluster:
         else: 
             range_value = range_hierarchy.getCostOfRange(range_features[0], range_features[1])
         #print range_value
-        # Fake...
+        
         return range_value
+        # Fake...
         #return random.randint(0, 1)
 
 
