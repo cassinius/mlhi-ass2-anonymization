@@ -1,5 +1,6 @@
 import globals as GLOB
 import random
+import rangeGenHierarchy as RGH
 
 class NodeCluster:
 
@@ -72,24 +73,117 @@ class NodeCluster:
 
     def computeRangeCost(self, gen_h, node):
         # TODO implement range cost function
-
+        range_hierarchy = self._genHierarchies['range'][gen_h]
+        
+        range_features = self._genRangeFeatures[gen_h]
+        if range_features[1] < range_features[0]:
+            range_value = range_hierarchy.getCostOfRange(range_features[1], range_features[0])
+        else: 
+            range_value = range_hierarchy.getCostOfRange(range_features[0], range_features[1])
+        #print range_value
         # Fake...
-        return random.randint(0, 1)
+        return range_value
+        #return random.randint(0, 1)
 
 
     def computeNewGeneralization(self, gen_h, node):
         # TODO find the lowest common generalization level between cluster
         # and node and return level as well as the exact (string) value
+        cat_hierarchy = self._genHierarchies['categorical'][gen_h]
 
+        cluster_value = self._genCatFeatures[gen_h]
+        node_value = self._dataset[node][gen_h]
+        cluster_level = cat_hierarchy.getLevelEntry(cluster_value)
+        node_level = cat_hierarchy.getLevelEntry(node_value)
+        if cluster_value != node_value:
+            if node_level < cluster_level:
+                result_level = node_level
+                result_value = at_hierarchy.getGeneralizationOf(node_value)
+            else:
+                result_level = cluster_level
+                result_value = cat_hierarchy.getGeneralizationOf(cluster_value)
+        else:
+            result_level = node_level
+            result_value = cluster_value
+        #print cat_hierarchy.getEntries()
+        #print cluster_level
+        #print node_level
+        #print result_level
+        #print result_value
+        #print self._genCatFeatures[gen_h]
+        #print self._dataset[node][gen_h]
         # Fake...
-        return [0, "generalized!"]
-
+        return [result_level, result_value]
+        #return [0, "generalized!"]
 
     def computeSIL(self, node):
         # TODO implement SIL function with binary neighborhood vectors
+        #print self.getNodes()
+        current_neighbourhood = self.getNeighborhoods()
+        boolean_vector = {}
+        #print node
+        #print "adj list: "
+        #print self._adjList[node]
+        #print "neighborhood:"
+        #print current_neighbourhood
+        temp_cost = 0.0       
 
+        for node_root in current_neighbourhood:
+            temp_compare = {}
+            temp_compare[node] = []
+            temp_compare[node_root] = [] 
+            for node_in_all in self._dataset:     
+                value_node = 0
+                value_node_root = 0  
+                if node_in_all != node_root and node_in_all != node:
+                    if str(node_in_all) in self._adjList[node]:
+                        value_node = 1
+                    
+                    temp_compare[node].append(value_node)
+
+                    if str(node_in_all) in self._adjList[node_root]:
+                        value_node_root = 1
+                    temp_compare[node_root].append(value_node_root)
+            #symmetric binary dissimilarity from reference 8 (page 70/71) of the paper         
+            q = 0.0
+            r = 0.0
+            s = 0.0
+            t = 0.0
+            for i in range(0, len(temp_compare[node])):
+                if temp_compare[node][i] == 1 and temp_compare[node_root][i] == 1:
+                    q += 1
+                elif temp_compare[node][i] == 0 and temp_compare[node_root][i] == 1:
+                    r += 1
+                elif temp_compare[node][i] == 1 and temp_compare[node_root][i] == 0:
+                    s += 1
+                elif temp_compare[node][i] == 0 and temp_compare[node_root][i] == 0:
+                    t += 1
+            temp_cost += (q+s)/(q+r+s+t)
+
+            #print q
+            #print r
+            #print s
+            #print t
+            #temp_vector = {}
+            #for node_neighbour in current_neighbourhood[node_root]:
+            #    
+            #    if node_neighbour == node:
+            #        print node_neighbour == node 
+            #        temp_vector[node_neighbour] = 1
+            #    else:
+            #        temp_vector[node_neighbour] = 0
+            #    boolean_vector[node_root] = temp_vector
+            #for node_adj in self_adjList[node]:
+        cost = temp_cost/(len(current_neighbourhood))
+        
+        #print boolean_vector
+        #print self.getNeighborhoods()
+
+
+        
+        return cost
         # Fake...
-        return random.randint(0, 1)
+        #return random.randint(0, 1)
 
 
     def expandRange(self, range, nr):
