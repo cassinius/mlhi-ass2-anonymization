@@ -10,13 +10,13 @@
 		},
 		"self": 
 		{
-			"name": "Self", 
+			"name": "self",
 			"gen": "all",
 			"level": 1
 		},
-		"gov": 
+		"gov":
 		{
-			"name": "Gov", 
+			"name": "gov",
 			"gen": "all",
 			"level": 1
 		},

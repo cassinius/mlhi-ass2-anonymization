@@ -40,7 +40,7 @@ class NodeCluster:
 
         for genCatFeatureKey in self._genCatFeatures:
             self._genCatFeatures[genCatFeatureKey] = self.computeNewGeneralization(genCatFeatureKey, node)[1]
-        # print self._genCatFeatures
+        #print self._genCatFeatures
 
         for genRangeFeatureKey in self._genRangeFeatures:
             range = self._genRangeFeatures[genRangeFeatureKey]
@@ -83,35 +83,69 @@ class NodeCluster:
     def computeNewGeneralization(self, gen_h, node):
         # TODO find the lowest common generalization level between cluster
         # and node and return level as well as the exact (string) value
+
         cat_hierarchy = self._genHierarchies['categorical'][gen_h]
         node_entry = self._dataset[node][gen_h]
         cluster_entry = self._genCatFeatures[gen_h]
 
-        levelNr_Node = cat_hierarchy.getLevelNr(node_entry)
-        levelNr_Cluster = cat_hierarchy.getLevelNr(cluster_entry)
+        if node_entry == "*":
+            node_entry = "all"
+
+        if cluster_entry == "*":
+            cluster_entry = "all"
+
+        levelNr_Node = cat_hierarchy.getLevelEntry(node_entry)
+        levelNr_Cluster = cat_hierarchy.getLevelEntry(cluster_entry)
+
+        # bring levelNr of node and cluster to the same nr
+
+        while levelNr_Node > levelNr_Cluster:
+            node_entry = cat_hierarchy.getGeneralizationOf(node_entry)
+            levelNr_Node = cat_hierarchy.getLevelEntry(node_entry)
+
+        while levelNr_Cluster > levelNr_Node:
+            cluster_entry = cat_hierarchy.getGeneralizationOf(cluster_entry)
+            levelNr_Cluster = cat_hierarchy.getLevelEntry(cluster_entry)
+
+        # should be on the same level nr now
 
         name_Node = cat_hierarchy.getNameEntry(node_entry)
-        name_Cluster = cat_hierarchy.getNameEntry(cluster_entry)
+        name_Cluster =cat_hierarchy.getNameEntry(cluster_entry)
 
+        while name_Node != name_Cluster:
+            node_entry = cat_hierarchy.getGeneralizationOf(node_entry)
+            cluster_entry = cat_hierarchy.getGeneralizationOf(cluster_entry)
+            name_Node = cat_hierarchy.getNameEntry(node_entry)
+            name_Cluster = cat_hierarchy.getNameEntry(cluster_entry)
 
-        if levelNr_Cluster==levelNr_Node:
-            if name_Node==name_Cluster:
-                return [levelNr_Node, name_Node]
-            else:
-
-        else:
-
-
-        #print node_hierarchy
-        # Fake...
-        return [0, "generalized!"]
+        return [cat_hierarchy.getLevelEntry(node_entry), cat_hierarchy.getNameEntry(node_entry)]
 
 
     def computeSIL(self, node):
         # TODO implement SIL function with binary neighborhood vectors
 
-        # Fake...
-        return random.randint(0, 1)
+        n_node = self._adjList[node]
+
+        sum = 0.0
+
+        for n_cluster in self._neighborhoods:
+            cluster_neighbors = self._neighborhoods[n_cluster]
+
+            temp_dataset = n_node + list(set(cluster_neighbors) - set(n_node))
+            n = 0.0
+            cnt = 0.0
+
+            for i in temp_dataset:
+                if i != node and i != n_cluster:
+                    n += 1
+                    if (i in n_node) != (i in cluster_neighbors):
+                        cnt += 1
+
+            sum += cnt/n
+
+        sum /= len(self._neighborhoods)
+
+        return sum
 
 
     def expandRange(self, range, nr):
@@ -122,9 +156,9 @@ class NodeCluster:
 
     def computeNodeCost(self, node):
         gil = self.computeGIL(node)
-        # print "GIL: " + str(gil)
+        print "GIL: " + str(gil)
         sil = self.computeSIL(node)
-        # print "SIL: " + str(sil)
+        print "SIL: " + str(sil)
         return GLOB.ALPHA*gil + GLOB.BETA*sil
 
 
