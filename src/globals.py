@@ -50,4 +50,4 @@ GEN_WEIGHT_VECTORS = {
 }
 
 # Chosen weight vector
-VECTOR = 'equal'
+VECTOR = 'emph_age'
