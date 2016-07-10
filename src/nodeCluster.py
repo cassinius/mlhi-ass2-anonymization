@@ -71,9 +71,6 @@ class NodeCluster:
 
 
     def computeRangeCost(self, gen_h, node):
-        # TODO implement range cost function
-
-        node_value = self._dataset[node][gen_h]
         feat = self._genRangeFeatures[gen_h]
         range_h = self._genHierarchies['range'][gen_h]
         costs = range_h.getCostOfRange(min(feat), max(feat))
