@@ -74,10 +74,7 @@ class NodeCluster:
         feat = self._genRangeFeatures[gen_h]
         range_h = self._genHierarchies['range'][gen_h]
         costs = range_h.getCostOfRange(min(feat), max(feat))
-        #print node_value, feat, costs
         return costs
-        # Fake...
-        #return random.randint(0, 1)
 
 
     def computeNewGeneralization(self, gen_h, node):
@@ -114,17 +111,16 @@ class NodeCluster:
         return random.randint(0, 1)
 
 
-    def expandRange(self, range, nr):
-        min = nr if nr < range[0] else range[0]
-        max = nr if nr > range[1] else range[1]
-        return [min, max]
+
+    def expandRange(self, cur_range, nr):
+        return [min(cur_range+[nr]), max(cur_range+[nr])]
 
 
     def computeNodeCost(self, node):
         gil = self.computeGIL(node)
-        # print "GIL: " + str(gil)
+        # print "GIL: %.5f" % gil
         sil = self.computeSIL(node)
-        # print "SIL: " + str(sil)
+        # print "SIL: %.5f" % sil
         return GLOB.ALPHA*gil + GLOB.BETA*sil
 
 
