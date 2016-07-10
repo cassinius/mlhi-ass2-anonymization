@@ -105,11 +105,19 @@ class NodeCluster:
 
 
     def computeSIL(self, node):
-        # TODO implement SIL function with binary neighborhood vectors
+        sil = 0.
+        neighbourhoods = self.getNeighborhoods()
+        node_vec = set(neighbourhoods.keys())
 
-        # Fake...
-        return random.randint(0, 1)
+        for neighbour_id, neighbour_vec in neighbourhoods.items():
+            symdiff = node_vec.symmetric_difference(neighbour_vec)
+            union = node_vec.union(neighbour_vec)
+            if neighbour_id in symdiff:
+                symdiff.remove(neighbour_id)
+                union.remove(neighbour_id)
+            n = float(len(symdiff)) / len(union)
 
+        return n / len(neighbourhoods)
 
 
     def expandRange(self, cur_range, nr):
