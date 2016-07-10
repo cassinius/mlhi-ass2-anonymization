@@ -81,11 +81,31 @@ class NodeCluster:
 
 
     def computeNewGeneralization(self, gen_h, node):
-        # TODO find the lowest common generalization level between cluster
-        # and node and return level as well as the exact (string) value
+        """ find the lowest common generalization level between cluster
+        and node and return level as well as the exact (string) value
+        """
 
-        # Fake...
-        return [0, "generalized!"]
+        c_hierarchy = self._genHierarchies['categorical'][gen_h]
+        n_value = self._dataset[node][gen_h]
+        n_level = c_hierarchy.getLevelEntry(n_value)
+        c_value = self._genCatFeatures[gen_h]
+        c_level = c_hierarchy.getLevelEntry(c_value)
+
+        # Assumption1: node is always a leaf
+        # Assumption2: all leafs have the same level
+
+        while n_value != c_value:
+            # always go up for node
+            n_value = c_hierarchy.getGeneralizationOf(n_value)
+
+            # if node and cluster are at the same level, go cluster up too
+            if n_level == c_level:
+                c_value = c_hierarchy.getGeneralizationOf(c_value)
+                c_level -= 1
+
+            n_level -= 1
+
+        return [c_level, c_value]
 
 
     def computeSIL(self, node):
