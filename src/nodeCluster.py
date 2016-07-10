@@ -71,38 +71,64 @@ class NodeCluster:
 
 
     def computeRangeCost(self, gen_h, node):
-        # TODO implement range cost function
-
-        # Fake...
-        return random.randint(0, 1)
+        feat = self._genRangeFeatures[gen_h]
+        range_h = self._genHierarchies['range'][gen_h]
+        costs = range_h.getCostOfRange(min(feat), max(feat))
+        return costs
 
 
     def computeNewGeneralization(self, gen_h, node):
-        # TODO find the lowest common generalization level between cluster
-        # and node and return level as well as the exact (string) value
+        """ find the lowest common generalization level between cluster
+        and node and return level as well as the exact (string) value
+        """
 
-        # Fake...
-        return [0, "generalized!"]
+        c_hierarchy = self._genHierarchies['categorical'][gen_h]
+        n_value = self._dataset[node][gen_h]
+        n_level = c_hierarchy.getLevelEntry(n_value)
+        c_value = self._genCatFeatures[gen_h]
+        c_level = c_hierarchy.getLevelEntry(c_value)
+
+        while n_value != c_value:
+            old_n_level = n_level
+
+            if c_level <= n_level:
+                n_value = c_hierarchy.getGeneralizationOf(n_value)
+                n_level -= 1
+
+            # if node and cluster are at the same level, go cluster up too
+            if old_n_level <= c_level:
+                c_value = c_hierarchy.getGeneralizationOf(c_value)
+                c_level -= 1
+
+
+        return [c_level, c_value]
 
 
     def computeSIL(self, node):
-        # TODO implement SIL function with binary neighborhood vectors
+        sil = 0.
+        neighbourhoods = self.getNeighborhoods()
+        node_vec = set(neighbourhoods.keys())
 
-        # Fake...
-        return random.randint(0, 1)
+        for neighbour_id, neighbour_vec in neighbourhoods.items():
+            symdiff = node_vec.symmetric_difference(neighbour_vec)
+            union = node_vec.union(neighbour_vec)
+            if neighbour_id in symdiff:
+                symdiff.remove(neighbour_id)
+                union.remove(neighbour_id)
+            n = float(len(symdiff)) / len(union)
+
+        return n / len(neighbourhoods)
 
 
-    def expandRange(self, range, nr):
-        min = nr if nr < range[0] else range[0]
-        max = nr if nr > range[1] else range[1]
-        return [min, max]
+    def expandRange(self, cur_range, nr):
+        return [min(cur_range+[nr]), max(cur_range+[nr])]
 
 
     def computeNodeCost(self, node):
         gil = self.computeGIL(node)
-        # print "GIL: " + str(gil)
+        # print "GIL: %.5f" % gil
         sil = self.computeSIL(node)
-        # print "SIL: " + str(sil)
+        # print "SIL: %.5f" % sil
         return GLOB.ALPHA*gil + GLOB.BETA*sil
 
 
